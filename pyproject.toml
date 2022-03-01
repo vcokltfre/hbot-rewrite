@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "hbot"
+version = "1.0.0"
+description = "A bot to ensure h, and only h"
+authors = ["vcokltfre <vcokltfre@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/vcokltfre/hbot-rewrite"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+taskipy = "^1.9.0"
+disnake = "^2.3.0"
+loguru = "^0.5.3"
+python-dotenv = "^0.19.2"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+pre-commit = "^2.16.0"
+
+[tool.taskipy.tasks]
+start = "python -m src"
+lint = "black . && isort --profile black ."
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
