@@ -1,10 +1,15 @@
 from os import environ
 
+from disnake import Intents
+
 from . import Bot
 
 
 def main() -> None:
-    bot = Bot()
+    intents = Intents.default()
+    intents.members = True
+
+    bot = Bot(intents=intents)
 
     for ext in [
         "src.exts.automod",
