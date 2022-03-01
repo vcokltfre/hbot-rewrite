@@ -6,7 +6,7 @@ from disnake.ext.commands import Cog
 from src.impl.bot import Bot
 
 
-ROLE = int(environ["AUTO_ROLE_ID"])
+ROLE = int(environ["ROLE"])
 
 
 class AutoRole(Cog):
